@@ -2,6 +2,7 @@ import "./globals.css";
 import { Inter } from "next/font/google";
 import Header from "../components/header";
 import { ClerkProvider } from "@clerk/nextjs";
+import { Toaster } from "sonner";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -14,17 +15,18 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <ClerkProvider>
-    <html lang="en">
-      <body className={`${inter.className}`}>
-        <Header></Header>
-        <main className="min-h-screen"> {children}</main>
-        <footer className="bg-blue-100">
-          <div className="container mx-auto text-center p-4 text-grey-800">
-            <p>copyright is not a very powerful way to protect a UI</p>
-          </div>
-        </footer>
-      </body>
-    </html>
+      <html lang="en">
+        <body className={`${inter.className}`}>
+          <Header></Header>
+          <main className="min-h-screen"> {children}</main>
+          <Toaster richColors></Toaster>
+          <footer className="bg-blue-100">
+            <div className="container mx-auto text-center p-4 text-grey-800">
+              <p>copyright is not a very powerful way to protect a UI</p>
+            </div>
+          </footer>
+        </body>
+      </html>
     </ClerkProvider>
   );
 }
