@@ -34,7 +34,7 @@ const header = async () => {
                 </Button>
               </Link>
               <Link
-                href={"/transaction/Create"}
+                href={"/transaction/create"}
                 className=" flex items-center  gap-2"
               >
                 <Button>
